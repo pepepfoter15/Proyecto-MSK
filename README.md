@@ -1,4 +1,3 @@
-#Proyecto MSX - MARCA
 Proyecto MSX - MARCA
 
 Queremos hacer una aplicación web que nos ayude a controlar nuestra colección de juegos de nuestro ordenador preferido: el MSX.
