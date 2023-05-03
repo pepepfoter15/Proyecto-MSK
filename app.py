@@ -3,13 +3,16 @@ import os
 import json
 app = Flask(__name__)
 
+#Abrir el fichero json
 with open('MSX.json') as fichero:
     datos=json.load(fichero)
 
+#Página de inicio 
 @app.route('/')
 def inicio():
 	return render_template("inicio.html")
 
+#Página de búsqueda
 @app.route('/juegos', methods=["GET","POST"])
 def juegos():
     if request.method == "GET":
@@ -36,6 +39,7 @@ def juegos():
                 identificadores.append(juego["id"])
         return render_template("juegos.html", nom_juego=nombre_juego, l_nombres=nombres, l_desarrolladores=desarrolladores, l_identificadores=identificadores, l_categorias=set(categorias))
 
+#Página para poner el número del identificador
 @app.route('/juego/<int:identificador>')
 def juegos_detalles(identificador):
     for juegos in datos:
